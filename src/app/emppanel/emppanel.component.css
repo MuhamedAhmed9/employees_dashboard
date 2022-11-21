@@ -1,0 +1,63 @@
+.users_panel {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 30px;
+  margin-top: 30px;
+}
+.panel-section {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.add-emp,
+.get-emp {
+  width: 48.8%;
+  background-color: #ebedef;
+  padding: 15px;
+  border-radius: 20px;
+}
+.add-emp .form-group {
+  display: flex;
+  align-items: center;
+}
+.add-emp .form-group label {
+  font-size: 0.9em;
+  width: 25%;
+  font-weight: 600;
+}
+.btn-main {
+  background-color: #321fdb;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  font-weight: 600;
+  cursor: pointer;
+}
+.get-emp .img-box {
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+.get-emp img {
+  width: 100%;
+}
+.emp-viewer {
+  max-height: 246.4px;
+  overflow-y: scroll;
+}
+.closeBtn {
+  position: absolute;
+  top: 45%;
+  right: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}

@@ -1,0 +1,110 @@
+<div class="users_panel">
+  <h2 class="h3 text-center">
+    Total Number of Employees : {{ totalEmployees }} Employee
+  </h2>
+  <div class="panel-section">
+    <div class="add-emp">
+      <h5 class="fw-bold text-center">Add Employee</h5>
+      <form
+        [formGroup]="empForm"
+        class="mt-4"
+        (ngSubmit)="submitForm($event)"
+        enctype="multipart/form-data"
+      >
+        <div class="form-group my-2">
+          <label for="first_name">First Name:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="first_name"
+            formControlName="first_name"
+          />
+        </div>
+        <div class="form-group my-2">
+          <label for="last_name">Last Name:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="last_name"
+            formControlName="last_name"
+          />
+        </div>
+        <div class="form-group my-2">
+          <label for="department">Deparment:</label>
+          <select
+            class="form-control"
+            name=""
+            id="department"
+            formControlName="department"
+          >
+            <option [ngValue]="null" disabled>Choose your Deparment</option>
+            <option *ngFor="let dept of departments" [ngValue]="dept">
+              {{ dept }}
+            </option>
+          </select>
+        </div>
+        <div class="form-group my-2">
+          <label for="department">Profile Image:</label>
+          <input
+            type="file"
+            name="image"
+            formControlName="image"
+            (input)="fileChoosen($event)"
+          />
+        </div>
+        <div class="text-center">
+          <button class="btn btn-main my-3">Add New Employee</button>
+        </div>
+      </form>
+    </div>
+    <div class="get-emp">
+      <h5 class="fw-bold text-center mb-4">All Employees</h5>
+      <div class="emp-viewer">
+        <div
+          *ngFor="let emp of GISEmps"
+          class="user-box d-flex mt-2 position-relative"
+        >
+          <span (click)="deleteEmp(emp._id)" class="closeBtn bg-danger"
+            ><i class="fa fa-close"></i
+          ></span>
+          <div class="img-box">
+            <img
+              [src]="
+                emp.image
+                  ? emp.image
+                  : 'https://res.cloudinary.com/demo/image/upload/d_avatar.png/non_existing_id.png'
+              "
+              alt=""
+            />
+          </div>
+          <div class="info-box">
+            <h4>{{ emp.first_name + " " + emp.last_name }}</h4>
+            <p>{{ emp.department }}</p>
+          </div>
+        </div>
+        <div
+          *ngFor="let emp of HREmps"
+          class="user-box d-flex mt-2 position-relative"
+        >
+          <span (click)="deleteEmp(emp._id)" class="closeBtn bg-danger"
+            ><i class="fa fa-close"></i
+          ></span>
+          <div class="img-box">
+            <img
+              [src]="
+                emp.image
+                  ? emp.image
+                  : 'https://res.cloudinary.com/demo/image/upload/d_avatar.png/non_existing_id.png'
+              "
+              alt=""
+            />
+          </div>
+          <div class="info-box">
+            <h4>{{ emp.first_name + " " + emp.last_name }}</h4>
+            <p>{{ emp.department }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

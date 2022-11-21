@@ -1,0 +1,15 @@
+.header {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 30px;
+}
+.header span {
+  display: flex;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.555);
+  font-size: 1.4rem;
+}
+.header img {
+  width: 40px;
+  margin-left: 10px;
+}
